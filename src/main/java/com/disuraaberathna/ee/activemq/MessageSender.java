@@ -12,7 +12,8 @@ public class MessageSender {
             connection.start();
 
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Topic topic = session.createTopic("News");
+//            Topic topic = session.createTopic("News");
+            Topic topic = session.createTopic("activeMqTopic");
 
             MessageProducer producer = session.createProducer(topic);
 
