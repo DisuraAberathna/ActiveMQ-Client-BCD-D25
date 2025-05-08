@@ -8,7 +8,7 @@ public class MessageReceiver {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
         try {
             Connection connection = connectionFactory.createConnection();
-            connection.setClientID("ActiveMQ-Client-App-01");
+            connection.setClientID("ActiveMQ-Client-App-02");
             connection.start();
 
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -27,9 +27,13 @@ public class MessageReceiver {
                 }
             });
 
-            consumer.close();
-            session.close();
-            connection.close();
+//            consumer.close();
+//            session.close();
+//            connection.close();
+
+            while (true) {
+
+            }
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
